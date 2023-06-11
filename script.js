@@ -45,9 +45,13 @@ function answer(selection) {
     console.log('selectionQuestionNumber is ', selectedQuestionNumber);
     console.log('current question is ', question['right_answer']);
 
+    let idOfRigthAnswer = `answer_${question['right_answer']}`;
+
     if(selectedQuestionNumber == question['right_answer']) {
         console.log('Richtige Anwort');
+        document.getElementById(selection).parentNode.classList.add('bg-success');
     }else {
-        console.log('Falsche Antwort');
+        document.getElementById(selection).parentNode.classList.add('bg-danger');
+        document.getElementById(idOfRigthAnswer).parentNode.classList.add('bg-success');
     }
 }
